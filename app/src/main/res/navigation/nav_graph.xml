@@ -8,6 +8,14 @@
     <fragment
         android:id="@+id/citiesFragment"
         android:name="com.tuwiq.hotels.fragments.CitiesFragment"
-        android:label="fragment_cities"
-        tools:layout="@layout/fragment_cities" />
+        android:label="Cities"
+        tools:layout="@layout/fragment_cities" >
+        <action
+            android:id="@+id/action_citiesFragment_to_hotelsFragment"
+            app:destination="@id/hotelsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hotelsFragment"
+        android:name="com.tuwiq.hotels.fragments.HotelsFragment"
+        android:label="Hotels" />
 </navigation>

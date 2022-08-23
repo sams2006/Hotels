@@ -41,7 +41,7 @@ class CitiesFragment : Fragment() {
        val listCities = Data().loadCitiesImages()
         recyclerView = binding.recyclerCities
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = CitiesAdapter(listCities , requireContext())
+        recyclerView.adapter = CitiesAdapter(listCities )
 
     }
 
