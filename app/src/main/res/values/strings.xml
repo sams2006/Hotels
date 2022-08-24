@@ -2,4 +2,16 @@
     <string name="app_name">Hotels</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="london">London</string>
+    <string name="sea_container_london">Sea Container</string>
+    <string name="nyx_hotel_london">NYX Hotel</string>
+    <string name="maldives">Maldives</string>
+    <string name="amaya_kuda_rah_mald">Amaya Kuda Rah</string>
+    <string name="lily_beach_mald">Lily Beach</string>
+    <string name="amsterdam">Amsterdam</string>
+    <string name="eden_hotel_amsterdam">Eden Hotel Amsterdam</string>
+    <string name="double_tree_amsterdam">Double Tree by Hilton</string>
+    <string name="madrid">Madrid</string>
+    <string name="hotel_mora_madrid">Hotel Mora Madrid</string>
+    <string name="wellington_hotel">Wellington Hotel Madrid</string>
 </resources>

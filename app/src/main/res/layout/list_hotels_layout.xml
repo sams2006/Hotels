@@ -13,11 +13,25 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_view_hotel_name"
+            tools:text="Hotel Name"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/city_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
             tools:src="@drawable/maldives" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_view_city_name"
+            tools:text="LONDON"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

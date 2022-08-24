@@ -11,7 +11,7 @@ import com.tuwiq.hotels.databinding.FragmentCitiesBinding
 import com.tuwiq.hotels.databinding.FragmentHotelsBinding
 
 
-class HotelsFragment : Fragment() {
+class HotelsDetailsFragment : Fragment() {
     private var _binding: FragmentHotelsBinding? = null
     private val binding get() = _binding!!
 
