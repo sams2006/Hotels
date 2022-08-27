@@ -14,4 +14,7 @@
     <string name="madrid">Madrid</string>
     <string name="hotel_mora_madrid">Hotel Mora Madrid</string>
     <string name="wellington_hotel">Wellington Hotel Madrid</string>
+    <string name="price_title">price each night: </string>
+    <string name="price_total">sub total: %s </string>
+
 </resources>

@@ -9,7 +9,7 @@
         android:id="@+id/citiesFragment"
         android:name="com.tuwiq.hotels.fragments.CitiesAndHotelsFragment"
         android:label="Cities and Hotels "
-        tools:layout="@layout/fragment_cities" >
+        tools:layout="@layout/fragment_cities_and_hotels" >
         <action
             android:id="@+id/action_citiesFragment_to_hotelsFragment"
             app:destination="@id/hotelsFragment" />

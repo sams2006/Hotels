@@ -8,30 +8,81 @@
     app:cardElevation="8dp"
     app:cardUseCompatPadding="true">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_hotel_name"
-            tools:text="Hotel Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.042"
+            app:layout_constraintStart_toEndOf="@+id/city_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Hotel Name" />
+
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/city_image"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="105dp"
+            android:layout_height="116dp"
+            android:layout_marginEnd="288dp"
             android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             tools:src="@drawable/maldives" />
+
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_city_name"
-            tools:text="LONDON"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/city_image"
+            tools:text="LONDON" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:numStars="5"
+            android:isIndicator="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.043"
+            app:layout_constraintStart_toEndOf="@+id/city_image"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_hotel_name" />
+
+        <TextView
+            android:id="@+id/price_tex_view_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="price on night:"
+            app:layout_constraintBottom_toTopOf="@+id/text_view_city_name"
+            app:layout_constraintStart_toEndOf="@+id/city_image"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+            app:layout_constraintVertical_bias="0.4" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/text_view_city_name"
+            app:layout_constraintStart_toEndOf="@+id/price_tex_view_title"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="30$" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
