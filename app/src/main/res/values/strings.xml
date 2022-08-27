@@ -19,6 +19,15 @@
     <string name="booking_details"> Nights: %1$s \n Room: %2$s \nBooking date: %3$s \n
         Total: %4$s \n\n Thank you!</string>
     <string name="new_booking_order">new Booking</string>
+    <string name="price_on_night">price on night:</string>
+    <string name="hotel">Hotel Name</string>
+    <string name="cancel">cancel</string>
+    <string name="next">Next</string>
+    <string name="sub_total_tools">subtotal: 30$</string>
+    <string name="breakfast_add_20">breakfast (add 20$)</string>
+    <string name="three_rooms">three Rooms</string>
+    <string name="two_rooms">two Rooms</string>
+    <string name="one_room">one Room</string>
     <plurals name="nights">
         <item quantity="one">%d night</item>
         <item quantity="other">%d nights</item>

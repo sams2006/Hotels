@@ -67,14 +67,9 @@ class BookingFragment : Fragment() {
         }
     }
 
-    /**
-     * Cancel the order and start over.
-     */
-    fun cancelOrder() {
-        // Reset order in view model
-        viewModel.resetOrder()
 
-        // Navigate back to the [StartFragment] to start over
+    fun cancelOrder() {
+        viewModel.resetOrder()
         findNavController().navigate(R.id.action_bookingFragment_to_citiesFragment)
     }
 

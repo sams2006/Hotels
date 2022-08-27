@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="sharedviewModel"
             type="com.tuwiq.hotels.viewModel.SharedViewModel" />
+
         <variable
             name="bookingFragment"
             type="com.tuwiq.hotels.fragments.BookingFragment" />
 
     </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -40,11 +42,12 @@
                 <TextView
                     android:id="@+id/city"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    tools:text="Madrid"
-                    android:textStyle="bold"
                     android:text="@{sharedviewModel.nameCity.toString()}"
-                    android:layout_height="wrap_content"/>
+                    android:textStyle="bold"
+                    android:textColor="@color/primaryTextColor"
+                    tools:text="Madrid" />
 
 
                 <View
@@ -54,22 +57,22 @@
                     android:background="?android:attr/listDivider" />
 
 
-
                 <TextView
                     android:id="@+id/hotel_label"
-                    tools:text="hotel"
-                    android:layout_margin="4dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hotel" />
+                    android:layout_margin="4dp"
+                    android:text="Hotel"
+                    tools:text="hotel" />
 
                 <TextView
                     android:id="@+id/hotel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:textStyle="bold"
                     android:text="@{sharedviewModel.nameHotel.toString()}"
+                    android:textColor="@color/primaryTextColor"
+                    android:textStyle="bold"
                     tools:text="Hiliton" />
 
 
@@ -91,8 +94,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:textStyle="bold"
+                    android:textColor="@color/primaryTextColor"
                     android:text="@{sharedviewModel.quantity.toString()}"
+                    android:textStyle="bold"
                     tools:text="4" />
 
 
@@ -113,9 +117,10 @@
                     android:id="@+id/rooms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/primaryTextColor"
                     android:layout_margin="4dp"
-                    android:textStyle="bold"
                     android:text="@{sharedviewModel.room.toString()}"
+                    android:textStyle="bold"
                     tools:text="4" />
 
 
@@ -136,9 +141,10 @@
                     android:id="@+id/arrival"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/primaryTextColor"
                     android:layout_margin="4dp"
-                    android:textStyle="bold"
                     android:text="@{sharedviewModel.date}"
+                    android:textStyle="bold"
                     tools:text="4" />
 
 
@@ -152,26 +158,31 @@
                     android:id="@+id/total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{@string/price_total(sharedviewModel.total.toString())}"
-                    android:layout_marginEnd="8dp"
                     android:layout_gravity="end"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="@color/primaryTextColor"
+                    android:textStyle="bold"
+                    android:text="@{@string/price_total(sharedviewModel.total.toString())}"
                     tools:text="Total $5.00" />
 
             </LinearLayout>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/send_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:textColor="@color/white"
                 android:onClick="@{() -> bookingFragment.sendOrder()}"
                 android:text="send" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/cancel_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:textColor="@color/white"
+                android:backgroundTint="#AAAAAA"
                 android:onClick="@{() -> bookingFragment.cancelOrder()}"
                 android:text="cancel" />
 

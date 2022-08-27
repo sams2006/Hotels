@@ -1,84 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="sharedviewModel"
             type="com.tuwiq.hotels.viewModel.SharedViewModel" />
+
         <variable
             name="roomFragment"
             type="com.tuwiq.hotels.fragments.RoomFragment" />
     </data>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".fragments.RoomFragment">
 
-    <RadioGroup
-        android:id="@+id/option_rooms"
+    <ScrollView
         android:layout_width="match_parent"
-        android:padding="8dp"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
 
-        <RadioButton
-            android:id="@+id/option_one_room"
-            android:text="one Room"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:checked="@{sharedviewModel.room.equals(1)}"
-            android:onClick="@{() -> sharedviewModel.setRoom(1)}"/>
-        <RadioButton
-            android:id="@+id/option_two_room"
-            android:text="two Rooms"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:checked="@{sharedviewModel.room.equals(2)}"
-            android:onClick="@{() -> sharedviewModel.setRoom(2)}"/>
-        <RadioButton
-            android:id="@+id/option_tree_room"
-            android:text="three Rooms"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:checked="@{sharedviewModel.room.equals(3)}"
-            android:onClick="@{() -> sharedviewModel.setRoom(3)}"/>
-    </RadioGroup>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".fragments.RoomFragment">
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:checked="@{sharedviewModel.breakfast.equals(20)}"
-        android:onClick="@{() -> sharedviewModel.setBreakfast(20)}"
-        android:text="breakfast (add 20$)" />
+            <RadioGroup
+                android:id="@+id/option_rooms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
 
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="?android:attr/listDivider" />
+                <RadioButton
+                    android:id="@+id/option_one_room"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="@{sharedviewModel.room.equals(1)}"
+                    android:onClick="@{() -> sharedviewModel.setRoom(1)}"
+                    android:text="@string/one_room" />
 
+                <RadioButton
+                    android:id="@+id/option_two_room"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="@{sharedviewModel.room.equals(2)}"
+                    android:onClick="@{() -> sharedviewModel.setRoom(2)}"
+                    android:text="@string/two_rooms" />
 
+                <RadioButton
+                    android:id="@+id/option_tree_room"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="@{sharedviewModel.room.equals(3)}"
+                    android:onClick="@{() -> sharedviewModel.setRoom(3)}"
+                    android:text="@string/three_rooms" />
+            </RadioGroup>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_margin="16dp"
-        tools:text="subtotal: 30$"
-        android:text="@{@string/price_total(sharedviewModel.total.toString())}"/>
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@{sharedviewModel.breakfast.equals(20)}"
+                android:onClick="@{() -> sharedviewModel.setBreakfast(20)}"
+                android:text="@string/breakfast_add_20" />
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Next"
-        android:onClick="@{() -> roomFragment.goToNextScreen()}"
-        android:layout_margin="16dp"/>
-
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
 
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_margin="16dp"
+                android:text="@{@string/price_total(sharedviewModel.total.toString())}"
+                android:textStyle="bold"
+                android:textColor="@color/primaryTextColor"
+                tools:text="@string/sub_total_tools" />
 
-</LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:textColor="@color/white"
+                android:onClick="@{() -> roomFragment.goToNextScreen()}"
+                android:text="@string/next" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#AAAAAA"
+                android:layout_marginHorizontal="16dp"
+                android:textColor="@color/white"
+                android:onClick="@{() -> roomFragment.cancelOrder()}"
+                android:text="@string/cancel" />
+
+
+        </LinearLayout>
+    </ScrollView>
 </layout>

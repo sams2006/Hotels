@@ -40,7 +40,6 @@ class ArrivalFragment : Fragment() {
         }
 
 
-
     }
 
     fun goToNextScreen() {
@@ -48,9 +47,15 @@ class ArrivalFragment : Fragment() {
         findNavController().navigate(R.id.action_arrivalFragment_to_bookingFragment)
     }
 
+    fun cancelOrder() {
+
+        viewModel.resetOrder()
+        findNavController().navigate(R.id.action_arrivalFragment_to_citiesFragment)
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
-    }
+}
 

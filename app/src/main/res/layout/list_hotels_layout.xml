@@ -19,11 +19,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:gravity="center"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.042"
             app:layout_constraintStart_toEndOf="@+id/city_image"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Hotel Name" />
+            tools:text="@string/hotel" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/city_image"
@@ -40,13 +41,16 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_city_name"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.03"
             app:layout_constraintStart_toEndOf="@+id/city_image"
-            tools:text="LONDON" />
+            tools:text="@string/london" />
 
         <RatingBar
             android:id="@+id/ratingBar"
@@ -54,8 +58,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:numStars="5"
             android:isIndicator="true"
+            android:numStars="5"
+            android:rating="4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.043"
             app:layout_constraintStart_toEndOf="@+id/city_image"
@@ -66,7 +71,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="price on night:"
+            android:text="@string/price_on_night"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintBottom_toTopOf="@+id/text_view_city_name"
             app:layout_constraintStart_toEndOf="@+id/city_image"
             app:layout_constraintTop_toBottomOf="@+id/ratingBar"
@@ -78,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="12dp"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintBottom_toTopOf="@+id/text_view_city_name"
             app:layout_constraintStart_toEndOf="@+id/price_tex_view_title"
             app:layout_constraintTop_toBottomOf="@+id/ratingBar"

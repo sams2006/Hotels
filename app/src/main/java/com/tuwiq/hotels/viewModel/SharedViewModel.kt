@@ -89,13 +89,13 @@ class SharedViewModel: ViewModel() {
     }
 
 
-    fun hasNoQuantitySet() : Boolean{
-        return _quantity.value.toString().isNullOrBlank()
-    }
-
-   fun hasNoRoomSet(): Boolean {
-       return _room.value.toString().isNullOrBlank()
-   }
+//    fun hasNoQuantitySet() : Boolean{
+//        return _quantity.value.toString().isNullOrBlank()
+//    }
+//
+//   fun hasNoRoomSet(): Boolean {
+//       return _room.value.toString().isNullOrBlank()
+//   }
 
    fun setBreakfast(fast: Int) {
        _breakfast.value = fast

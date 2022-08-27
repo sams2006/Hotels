@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_hotelsFragment_to_roomFragment2"
             app:destination="@id/roomFragment2" />
+        <action
+            android:id="@+id/action_hotelsFragment_to_citiesFragment"
+            app:destination="@id/citiesFragment" />
     </fragment>
     <fragment
         android:id="@+id/roomFragment2"
@@ -29,6 +32,9 @@
         <action
             android:id="@+id/action_roomFragment2_to_arrivalFragment"
             app:destination="@id/arrivalFragment" />
+        <action
+            android:id="@+id/action_roomFragment2_to_citiesFragment"
+            app:destination="@id/citiesFragment" />
     </fragment>
     <fragment
         android:id="@+id/arrivalFragment"
@@ -38,6 +44,9 @@
         <action
             android:id="@+id/action_arrivalFragment_to_bookingFragment"
             app:destination="@id/bookingFragment" />
+        <action
+            android:id="@+id/action_arrivalFragment_to_citiesFragment"
+            app:destination="@id/citiesFragment" />
     </fragment>
     <fragment
         android:id="@+id/bookingFragment"

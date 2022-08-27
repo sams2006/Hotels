@@ -34,11 +34,11 @@ class CitiesAndHotelsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cities_and_hotels, container, false)
+        _binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_cities_and_hotels, container, false)
 
         return binding.root
     }
-
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -57,15 +57,19 @@ class CitiesAndHotelsFragment : Fragment() {
         recyclerViewAmsterdam = binding.recyclerAmsterdam
         recyclerViewMadrid = binding.recyclerMadrid
 
-        recyclerViewLondon.layoutManager = LinearLayoutManager(requireContext() , LinearLayoutManager.HORIZONTAL ,false)
-        recyclerViewMaldives.layoutManager = LinearLayoutManager(requireContext() , LinearLayoutManager.HORIZONTAL , false)
-        recyclerViewAmsterdam.layoutManager = LinearLayoutManager(requireContext() , LinearLayoutManager.HORIZONTAL , false)
-        recyclerViewMadrid.layoutManager = LinearLayoutManager(requireContext() , LinearLayoutManager.HORIZONTAL , false)
+        recyclerViewLondon.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        recyclerViewMaldives.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        recyclerViewAmsterdam.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        recyclerViewMadrid.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
-        recyclerViewLondon.adapter = CitiesAndHotelsAdapter(viewModel ,listLondonHotels )
-        recyclerViewMaldives.adapter = CitiesAndHotelsAdapter(viewModel,listMaldivesHotels)
-        recyclerViewAmsterdam.adapter = CitiesAndHotelsAdapter(viewModel,listAmsterdamHotels)
-        recyclerViewMadrid.adapter = CitiesAndHotelsAdapter(viewModel,listMadridHotels)
+        recyclerViewLondon.adapter = CitiesAndHotelsAdapter(viewModel, listLondonHotels)
+        recyclerViewMaldives.adapter = CitiesAndHotelsAdapter(viewModel, listMaldivesHotels)
+        recyclerViewAmsterdam.adapter = CitiesAndHotelsAdapter(viewModel, listAmsterdamHotels)
+        recyclerViewMadrid.adapter = CitiesAndHotelsAdapter(viewModel, listMadridHotels)
 
     }
 
@@ -74,7 +78,6 @@ class CitiesAndHotelsFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
-
 
 
 }

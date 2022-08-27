@@ -26,7 +26,8 @@ class HotelsDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_hotels_details, container, false)
+        _binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_hotels_details, container, false)
         return binding.root
     }
 
@@ -49,6 +50,11 @@ class HotelsDetailsFragment : Fragment() {
     fun goToNextScreen() {
         viewModel.setRoom(1)
         findNavController().navigate(R.id.action_hotelsFragment_to_roomFragment2)
+    }
+
+    fun cancelOrder() {
+        viewModel.resetOrder()
+        findNavController().navigate(R.id.action_hotelsFragment_to_citiesFragment)
     }
 
     override fun onDestroy() {

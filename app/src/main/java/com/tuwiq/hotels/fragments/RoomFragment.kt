@@ -37,12 +37,16 @@ class RoomFragment : Fragment() {
             roomFragment = this@RoomFragment
         }
 
-
     }
 
     fun goToNextScreen() {
-         viewModel.setDate(viewModel.dateOptions[0])
+        viewModel.setDate(viewModel.dateOptions[0])
         findNavController().navigate(R.id.action_roomFragment2_to_arrivalFragment)
+    }
+
+    fun cancelOrder() {
+        viewModel.resetOrder()
+        findNavController().navigate(R.id.action_roomFragment2_to_citiesFragment)
     }
 
     override fun onDestroy() {
