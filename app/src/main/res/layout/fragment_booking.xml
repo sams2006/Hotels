@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="sharedviewModel"
+            type="com.tuwiq.hotels.viewModel.SharedViewModel" />
+        <variable
+            name="bookingFragment"
+            type="com.tuwiq.hotels.fragments.BookingFragment" />
+
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/city_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="City"
+                    android:textAllCaps="true"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/city"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="4dp"
+                    tools:text="Madrid"
+                    android:textStyle="bold"
+                    android:text="@{sharedviewModel.nameCity.toString()}"
+                    android:layout_height="wrap_content"/>
+
+
+                <View
+                    android:id="@+id/divider4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
+
+
+                <TextView
+                    android:id="@+id/hotel_label"
+                    tools:text="hotel"
+                    android:layout_margin="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hotel" />
+
+                <TextView
+                    android:id="@+id/hotel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:textStyle="bold"
+                    android:text="@{sharedviewModel.nameHotel.toString()}"
+                    tools:text="Hiliton" />
+
+
+                <View
+                    android:id="@+id/divider5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/nights_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="quantity nights" />
+
+                <TextView
+                    android:id="@+id/nights"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:textStyle="bold"
+                    android:text="@{sharedviewModel.quantity.toString()}"
+                    tools:text="4" />
+
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/room_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="quantity Rooms" />
+
+                <TextView
+                    android:id="@+id/rooms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:textStyle="bold"
+                    android:text="@{sharedviewModel.room.toString()}"
+                    tools:text="4" />
+
+
+                <View
+                    android:id="@+id/divider7"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/arrival_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="Arrival Time" />
+
+                <TextView
+                    android:id="@+id/arrival"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:textStyle="bold"
+                    android:text="@{sharedviewModel.date}"
+                    tools:text="4" />
+
+
+                <View
+                    android:id="@+id/divider8"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/price_total(sharedviewModel.total.toString())}"
+                    android:layout_marginEnd="8dp"
+                    android:layout_gravity="end"
+                    tools:text="Total $5.00" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/send_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:onClick="@{() -> bookingFragment.sendOrder()}"
+                android:text="send" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:onClick="@{() -> bookingFragment.cancelOrder()}"
+                android:text="cancel" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

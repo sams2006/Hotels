@@ -17,5 +17,34 @@
     <fragment
         android:id="@+id/hotelsFragment"
         android:name="com.tuwiq.hotels.fragments.HotelsDetailsFragment"
-        android:label="Hotels Details" />
+        android:label="Choose nights" >
+        <action
+            android:id="@+id/action_hotelsFragment_to_roomFragment2"
+            app:destination="@id/roomFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomFragment2"
+        android:name="com.tuwiq.hotels.fragments.RoomFragment"
+        android:label="Choose Room" >
+        <action
+            android:id="@+id/action_roomFragment2_to_arrivalFragment"
+            app:destination="@id/arrivalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/arrivalFragment"
+        android:name="com.tuwiq.hotels.fragments.ArrivalFragment"
+        android:label="Choose arrival time"
+        tools:layout="@layout/fragment_arrival" >
+        <action
+            android:id="@+id/action_arrivalFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="com.tuwiq.hotels.fragments.BookingFragment"
+        android:label="Booking" >
+        <action
+            android:id="@+id/action_bookingFragment_to_citiesFragment"
+            app:destination="@id/citiesFragment" />
+    </fragment>
 </navigation>

@@ -7,26 +7,24 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.tuwiq.hotels.R
 import com.tuwiq.hotels.databinding.FragmentHotelsDetailsBinding
-import com.tuwiq.hotels.model.Hotel
+import com.tuwiq.hotels.databinding.FragmentRoomBinding
 import com.tuwiq.hotels.viewModel.SharedViewModel
 
 
-class HotelsDetailsFragment : Fragment() {
-    private var _binding: FragmentHotelsDetailsBinding? = null
+class RoomFragment : Fragment() {
+    private var _binding: FragmentRoomBinding? = null
     private val binding get() = _binding!!
     private val viewModel: SharedViewModel by activityViewModels()
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_hotels_details, container, false)
+        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_room, container, false)
         return binding.root
     }
 
@@ -36,24 +34,21 @@ class HotelsDetailsFragment : Fragment() {
         binding?.apply {
             lifecycleOwner = viewLifecycleOwner
             sharedviewModel = viewModel
-            detailsFragment = this@HotelsDetailsFragment
+            roomFragment = this@RoomFragment
         }
 
-        viewModel.imageHotel.observe(viewLifecycleOwner) { image ->
-            binding.imageHotel.setImageResource(image)
-        }
 
     }
 
-
     fun goToNextScreen() {
-        viewModel.setRoom(1)
-        findNavController().navigate(R.id.action_hotelsFragment_to_roomFragment2)
+         viewModel.setDate(viewModel.dateOptions[0])
+        findNavController().navigate(R.id.action_roomFragment2_to_arrivalFragment)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
+
 
 }

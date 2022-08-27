@@ -16,5 +16,12 @@
     <string name="wellington_hotel">Wellington Hotel Madrid</string>
     <string name="price_title">price each night: </string>
     <string name="price_total">sub total: %s </string>
+    <string name="booking_details"> Nights: %1$s \n Room: %2$s \nBooking date: %3$s \n
+        Total: %4$s \n\n Thank you!</string>
+    <string name="new_booking_order">new Booking</string>
+    <plurals name="nights">
+        <item quantity="one">%d night</item>
+        <item quantity="other">%d nights</item>
+    </plurals>
 
 </resources>
